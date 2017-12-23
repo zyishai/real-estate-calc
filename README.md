@@ -2,7 +2,7 @@
 > Advanced calculator for real estate investors
 
 [![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status][circle-image]][circle-url]
 
 Recalc is an advanced calculator that provide real estate investors an accurate return calculation.
 
@@ -60,5 +60,5 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 <!-- Markdown link & img dfn's -->
 [npm-image]: https://img.shields.io/badge/npm-5.5.1-orange.svg
 [npm-url]: https://nodejs.org/
-[travis-image]: https://travis-ci.org/Program4Fun/Minido.svg?branch=master
-[travis-url]: https://travis-ci.org/Program4Fun/Minido
+[circle-image]: https://circleci.com/gh/zyishai/real-estate-calc.svg?style=shield&circle-token=0d0b929adc6ab61816933a440e26eb3d0a42b6fc
+[circle-url]: https://circleci.com/gh/zyishai/real-estate-calc
