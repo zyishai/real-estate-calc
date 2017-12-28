@@ -4,7 +4,6 @@
   "private": true,
   "devDependencies": {
     "jest-expo": "23.0.0",
-    "react-devtools": "^3.0.0",
     "react-native-scripts": "1.8.1",
     "react-test-renderer": "16.0.0"
   },
@@ -15,13 +14,7 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test2": "node node_modules/jest/bin/jest.js --watch",
-    "test": "jest -o",
-    "postinstall": "remotedev-debugger --hostname localhost --port 5678 --injectserver",
-    "react-devtools": "react-devtools"
-  },
-  "remotedev": {
-    "hostname": "localhost",
-    "port": 5678
+    "test": "jest -o"
   },
   "jest": {
     "preset": "jest-expo"
