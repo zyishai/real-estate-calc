@@ -5,25 +5,21 @@ import {
 } from 'react-native';
 import { Provider } from 'react-redux'
 
-import langFunc from './lang'
 import store from './store'
 
 import Advertisement from './components/Advertisement'
+import Tabs from './components/Tabs'
 
 console.ignoredYellowBox = ['Remote debugger'];
 
-const lang = langFunc()
-
 export default class App extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  
   render() {
     return (
       <Provider store={store}>
         <View style={[styles.appStyle]}>
           <Advertisement />
+          <View style={{ flex: 1 }} />
+          <Tabs />
         </View>
       </Provider>
     );
