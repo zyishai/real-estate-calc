@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {
     View,
     Text,
-    TouchableNativeFeedback, 
+    TouchableWithoutFeedback, 
 } from 'react-native'
 
 import styles from './styles'
@@ -11,33 +11,20 @@ export default class Tab extends Component {
     constructor(props) {
         super(props)
 
-        const { width, selected } = this.props
-
-        const unselectedColor = this.props.unselectedColor || 'silver'
-        const selectedColor = this.props.selectedColor || 'white'
-        const unselectedTextColor = this.props.unselectedTextColor || 'black'
-        const selectedTextColor = this.props.selectedTextColor || 'black'
-
-        this.tabStyle = {
-            backgroundColor: selected ? selectedColor : unselectedColor,
-            width
-        }
-        this.labelStyle = {
-            fontWeight: selected ? 'bold' : 'normal',
-            color: selected ? selectedTextColor : unselectedTextColor
-        }
+        this.setStyles(this.props)
     }
     
     componentWillUpdate(nextProps) {
-        const { width, selected } = nextProps
+        this.setStyles(nextProps)
+    }
 
-        const unselectedColor = nextProps.unselectedColor || 'silver'
-        const selectedColor = nextProps.selectedColor || 'white'
-        const unselectedTextColor = nextProps.unselectedTextColor || 'black'
-        const selectedTextColor = nextProps.selectedTextColor || 'black'
+    setStyles(props) {
+        const { width, selected } = props
+
+        const unselectedTextColor = props.unselectedTextColor || 'black'
+        const selectedTextColor = props.selectedTextColor || 'royalblue'
 
         this.tabStyle = {
-            backgroundColor: selected ? selectedColor : unselectedColor,
             width
         }
         this.labelStyle = {
@@ -48,8 +35,7 @@ export default class Tab extends Component {
 
     render() {
         return (
-            <TouchableNativeFeedback
-                background={TouchableNativeFeedback.SelectableBackground()}
+            <TouchableWithoutFeedback
                 onPress={this.props.onPress}>
                 <View
                     style={[styles.tabStyle, this.tabStyle]}>
@@ -58,7 +44,7 @@ export default class Tab extends Component {
                         { this.props.label }
                     </Text>
                 </View>
-            </TouchableNativeFeedback>
+            </TouchableWithoutFeedback>
         )
     }
 }
