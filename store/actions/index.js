@@ -1,2 +1,3 @@
 export const UPDATE_SRC = 'UPDATE_SRC'
 export const UPDATE_USER_INPUT = 'UPDATE_USER_INPUT'
+export const SET_ACTIVE_TAB = 'SET_ACTIVE_TAB'
