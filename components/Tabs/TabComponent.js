@@ -27,7 +27,7 @@ export default class Tab extends Component {
             color: selected ? selectedTextColor : unselectedTextColor
         }
     }
-
+    
     componentWillUpdate(nextProps) {
         const { width, selected } = nextProps
 
