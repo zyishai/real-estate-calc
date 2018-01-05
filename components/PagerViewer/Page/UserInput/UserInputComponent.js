@@ -3,7 +3,7 @@ import {
     View
 } from 'react-native'
 
-import styles from './styles'
+import styles from '../styles'
 import FloatingLabel from './FloatingLabel'
 
 export default class UserInput extends Component {
