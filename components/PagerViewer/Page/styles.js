@@ -14,5 +14,23 @@ export default StyleSheet.create({
     },
     floatingLabelLabelStyle: {
         
+    },
+    resultStyle: {
+        flex: 1,
+        alignItems: 'center'
+    },
+    resultLabelContainer: {
+        flex: 1,
+        justifyContent: 'flex-start'
+    },
+    resultLabelStyle: {
+        fontWeight: 'bold'
+    },
+    resultValueContainer: {
+        flex: 1,
+        justifyContent: 'flex-end'
+    },
+    resultValueStyle: {
+        
     }
 })
