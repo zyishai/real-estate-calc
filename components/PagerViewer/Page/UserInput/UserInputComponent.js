@@ -4,7 +4,7 @@ import {
 } from 'react-native'
 
 import langFunc from '../../../../lang'
-import styles from '../styles'
+import styles from '../../styles'
 import FloatingLabel from './FloatingLabel'
 
 export default class UserInput extends Component {

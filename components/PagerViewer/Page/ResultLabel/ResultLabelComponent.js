@@ -5,7 +5,7 @@ import {
 } from 'react-native'
 
 import numeral from 'numeral'
-import styles from '../styles'
+import styles from '../../styles'
 import langFunc from '../../../../lang'
 
 export default class ResultLabelComponent extends Component {

@@ -5,7 +5,7 @@ import {
 } from 'react-native'
 
 import langFunc from '../../../lang'
-import styles from './styles'
+import styles from '../styles'
 
 import UserInput from './UserInput'
 import ResultLabel from './ResultLabel'
