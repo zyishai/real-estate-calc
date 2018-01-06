@@ -15,7 +15,11 @@ const def = {
     appraiserPrice: 'מחיר שמאי',
     monthlyIncome: 'הכנסה חודשית',
     investmentPeriod: 'משך השקעה',
-    sellingPrice: 'מחיר מכירה משוער'
+    sellingPrice: 'מחיר מכירה משוער',
+    monthlyPayment: 'החזר חודשי',
+    totalInterest: 'סה״כ ריבית',
+    totalMortgage: 'סה״כ החזר משכנתא',
+    totalReturn: 'סה״כ תשואה'
 }
 
 export default function(lang) {

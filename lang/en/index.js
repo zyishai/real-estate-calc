@@ -14,5 +14,9 @@ export default {
     appraiserPrice: 'Appraiser Price',
     monthlyIncome: 'Monthly Income',
     investmentPeriod: 'Investment Period',
-    sellingPrice: 'Selling Price'
+    sellingPrice: 'Selling Price',
+    monthlyPayment: 'Monthly Payment',
+    totalInterest: 'Total Interest',
+    totalMortgage: 'Total Mortgage',
+    totalReturn: 'Total Return'
 }

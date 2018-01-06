@@ -1,3 +1,3 @@
-import UserInput from './UserInputComponent'
+import UserInput from './UserInputContainer'
 
 export default UserInput

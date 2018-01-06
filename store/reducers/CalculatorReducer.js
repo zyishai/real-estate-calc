@@ -12,7 +12,11 @@ const initialState = {
     appraiserPrice: 0,
     monthlyIncome: 0,
     investmentPeriod: 0,
-    sellingPrice: 0
+    sellingPrice: 0,
+    monthlyPayment: 0,
+    totalInterest: 0,
+    totalMortgage: 0,
+    totalReturn: 0
 }
 
 export default function(state=initialState, action) {

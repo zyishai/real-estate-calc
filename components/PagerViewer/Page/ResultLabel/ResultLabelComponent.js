@@ -6,7 +6,7 @@ import {
 
 import numeral from 'numeral'
 import styles from '../styles'
-import langFunc from '../../../lang'
+import langFunc from '../../../../lang'
 
 export default class ResultLabelComponent extends Component {
     constructor(props) {
@@ -39,9 +39,9 @@ export default class ResultLabelComponent extends Component {
         const { label, value } = this.props
         let resultLabel = ''
         let resultValue = ''
-        if (label && value && !isNaN(value)) {
+        if (label && value) {
             resultLabel = this.lang[label] + ':'
-            resultValue = numeral(value).format('0,0.[00]') + '₪'
+            resultValue = '₪' + numeral(value(this.props)).format('0,0.[00]')
         } else {
             console.log('ResultLabelComponent: label or value props are not in correct format..')
         }
@@ -53,6 +53,7 @@ export default class ResultLabelComponent extends Component {
                         { resultLabel }
                     </Text>
                 </View>
+                <View style={[styles.resultSpacerStyle]} />
                 <View style={[styles.resultValueContainer, this.resultStyle]}>
                     <Text style={[styles.resultValueStyle, this.fontStyle]}>
                         { resultValue }

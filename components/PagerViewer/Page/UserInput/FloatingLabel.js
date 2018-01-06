@@ -130,7 +130,7 @@ class FloatingLabel extends React.Component {
         selectionState: this.props.selectionState,
         style: [styles.input, { borderColor: this.state.isFocused ? 'navy' : 'gray', borderWidth: this.state.isFocused ? 2 : 1 }],
         testID: this.props.testID,
-        value: this.state.text ? numeral(this.state.text).format('0,0.[00]') : null,
+        value: this.state.text ? this.state.text : null,
         underlineColorAndroid: 'transparent' || this.props.underlineColorAndroid, // android TextInput will show the default bottom border
         onKeyPress: this.props.onKeyPress
       },

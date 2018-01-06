@@ -4,7 +4,7 @@ import {
 
 export default StyleSheet.create({
     userInputStyle: {
-        flex: 1
+        
     },
     floatingLabelStyle: {
         
@@ -16,21 +16,41 @@ export default StyleSheet.create({
         
     },
     resultStyle: {
-        flex: 1,
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: 10
     },
     resultLabelContainer: {
-        flex: 1,
         justifyContent: 'flex-start'
     },
     resultLabelStyle: {
         fontWeight: 'bold'
     },
+    resultSpacerStyle: {
+        flex: 1
+    },
     resultValueContainer: {
-        flex: 1,
         justifyContent: 'flex-end'
     },
     resultValueStyle: {
         
+    },
+    pageStyle: {
+        flex: 1,
+        flexDirection: 'column',
+        padding: 30
+    },
+    pageTitleStyle: {
+        textAlign: 'center',
+        fontSize: 28,
+        fontWeight: 'bold',
+        marginTop: -20,
+    },
+    pageInputsStyle: {
+        //flex: 1,
+        marginTop: 10,
+        marginBottom: 40
+    },
+    pageResultsStyle: {
+        marginBottom: 20
     }
 })
