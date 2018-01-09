@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native'
 
 export default StyleSheet.create({
     tabStyle: {
-        height: 60,
+        height: 50,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -11,7 +11,7 @@ export default StyleSheet.create({
         fontFamily: 'Roboto',
     },
     tabRowStyle: {
-        height: 60,
+        height: 50,
         width: Dimensions.get('screen').width,
         backgroundColor: '#f3f3f3'
     }

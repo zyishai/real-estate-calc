@@ -29,9 +29,9 @@ export default class Page extends Component {
     render() {
         return (
             <View style={[styles.pageStyle]}>
-                <Text style={[styles.pageTitleStyle]}>
+                {/* <Text style={[styles.pageTitleStyle]}>
                     { this.lang[this.props.pageTitle] }
-                </Text>
+                </Text> */}
                 <ScrollView style={[styles.pageInputsStyle]}>
                     {
                         this.props.inputLabels.map((label, index) => (
