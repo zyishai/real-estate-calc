@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {
     View,
+    ScrollView,
     Text
 } from 'react-native'
 
@@ -31,7 +32,7 @@ export default class Page extends Component {
                 <Text style={[styles.pageTitleStyle]}>
                     { this.lang[this.props.pageTitle] }
                 </Text>
-                <View style={[styles.pageInputsStyle]}>
+                <ScrollView style={[styles.pageInputsStyle]}>
                     {
                         this.props.inputLabels.map((label, index) => (
                             <UserInput
@@ -39,7 +40,7 @@ export default class Page extends Component {
                                 label={label} />
                         ))
                     }
-                </View>
+                </ScrollView>
                 <View style={[styles.pageResultsStyle]}>
                     {
                         this.props.results.map((result, index) => (

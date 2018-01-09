@@ -4,7 +4,7 @@ import {
 
 export default StyleSheet.create({
     userInputStyle: {
-        
+        marginBottom: 10
     },
     floatingLabelStyle: {
         
@@ -36,8 +36,7 @@ export default StyleSheet.create({
     },
     pageStyle: {
         flex: 1,
-        flexDirection: 'column',
-        padding: 30
+        flexDirection: 'column'
     },
     pageTitleStyle: {
         textAlign: 'center',
@@ -52,5 +51,12 @@ export default StyleSheet.create({
     },
     pageResultsStyle: {
         marginBottom: 20
+    },
+    pagerStyle: {
+        flex: 1
+    },
+    pagerContent: {
+        flex: 1,
+        padding: 30
     }
 })

@@ -9,6 +9,7 @@ import store from './store'
 
 import Advertisement from './components/Advertisement'
 import Tabs from './components/Tabs'
+import Pager from './components/PagerViewer/'
 
 console.ignoredYellowBox = ['Remote debugger'];
 
@@ -18,7 +19,9 @@ export default class App extends React.Component {
       <Provider store={store}>
         <View style={[styles.appStyle]}>
           <Advertisement />
-          <View style={{ flex: 1 }} />
+          <View style={[styles.pagerStyle]}>
+            <Pager />
+          </View>
           <Tabs />
         </View>
       </Provider>
@@ -29,6 +32,9 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   appStyle: {
     marginTop: 24,
+    flex: 1
+  },
+  pagerStyle: {
     flex: 1
   }
 })
