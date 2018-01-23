@@ -41,7 +41,7 @@ export default class ResultLabelComponent extends Component {
         let resultValue = ''
         if (label && value) {
             resultLabel = this.lang[label] + ':'
-            resultValue = '₪' + numeral(value(this.props)).format('0,0.[00]')
+            resultValue = '₪' + numeral(value(this.props.calculator)).format('0,0.[00]')
         } else {
             console.log('ResultLabelComponent: label or value props are not in correct format..')
         }
