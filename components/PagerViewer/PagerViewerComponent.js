@@ -60,16 +60,16 @@ export default class PagerViewer extends Component {
                         }
                     },
                     {
-                        label: 'totalMortgage',
-                        calc: ({ loanPeriod }) => {
-                            const result = this.monthlyPayment * 12 * loanPeriod
+                        label: 'totalInterest',
+                        calc: ({ loanAmount }) => { 
+                            const result = this.totalMortgage - loanAmount
 
                             if (!parseFloat(result) || result < 0) {
-                                this.totalMortgage = 0
+                                this.totalInterest = 0
                                 return 0
                             }
 
-                            this.totalMortgage = result
+                            this.totalInterest = result
 
                             return result
                         }
