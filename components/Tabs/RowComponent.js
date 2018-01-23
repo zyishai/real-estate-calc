@@ -21,7 +21,7 @@ export default class Row extends Component {
     }
 
     onTabPress(tabIndex) {
-        this.props.setActive(tabIndex)
+        this.props.setActive(this.props.tabs.tabLabels.length - tabIndex - 1)
     }
 
     render() {
@@ -30,11 +30,11 @@ export default class Row extends Component {
             <View 
                 style={[styles.tabRowStyle, this.rowStyle]}>
             {
-                this.props.tabs.tabLabels.map((label, index) => (
+                this.props.tabs.tabLabels.map((label, index, tabs) => (
                     <Tab 
                         key={index}
                         width={screenWidth / this.props.tabs.tabLabels.length}
-                        selected={index === this.props.tabs.currentTab}
+                        selected={index === (tabs.length - this.props.tabs.currentTab - 1)}
                         label={this.lang[label]}
                         onPress={this.onTabPress.bind(this, index)} />
                 ))

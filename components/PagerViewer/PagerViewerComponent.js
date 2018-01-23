@@ -10,6 +10,14 @@ import styles from './styles'
 import Page from './Page'
 
 export default class PagerViewer extends Component {
+    componentDidUpdate() {
+        this.pagerViewer.setPage(this.props.currentTab)
+    }
+
+    _onPageSelected(e) {
+        this.props.setActive(e.nativeEvent.position)
+    }
+
     renderMortgagePage() {
         return (
             <Page
@@ -61,15 +69,14 @@ export default class PagerViewer extends Component {
     }
 
     render() {
-        const { direction } = this.props
-        const initialPage = direction === 'rtl' ? 1 : 0
         return (
             <ViewPagerAndroid
+                ref={el => this.pagerViewer = el}
                 style={[styles.pagerStyle]}
-                initialPage={initialPage}
-                keyboardDismissMode='on-drag'>
+                keyboardDismissMode='on-drag'
+                onPageSelected={this._onPageSelected.bind(this)}>
                 {
-                    direction === 'rtl' 
+                    this.props.direction === 'rtl' 
                     ? <View style={[styles.pagerContent]}>
                         {this.renderReturnPage()}
                     </View>
@@ -79,7 +86,7 @@ export default class PagerViewer extends Component {
                     {this.renderMortgagePage()}
                 </View>
                 {
-                    direction === 'rtl'
+                    this.props.direction === 'rtl'
                         ? null
                         : <View style={[styles.pagerContent]}>
                             {this.renderReturnPage()}
