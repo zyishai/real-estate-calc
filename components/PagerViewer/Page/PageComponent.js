@@ -47,7 +47,8 @@ export default class Page extends Component {
                             <ResultLabel 
                                 key={index}
                                 label={result.label}
-                                value={result.calc} />
+                                value={result.calc}
+                                sign={result.sign} />
                         ))
                     }
                 </View>

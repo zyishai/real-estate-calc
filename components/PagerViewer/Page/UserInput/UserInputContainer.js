@@ -8,11 +8,13 @@ const mapStateToProps = state => ({
     language: state.settings.language
 })
 
-const onChangeText = (key, value) => ({
-    type: UPDATE_USER_INPUT,
-    payload: {
-        [key]: value
+const onChangeText = (key, value) => {
+    return {
+        type: UPDATE_USER_INPUT,
+        payload: {
+            [key]: value
+        }
     }
-})
+}
 
 export default connect(mapStateToProps, { onChangeText })(UserInputComponent)

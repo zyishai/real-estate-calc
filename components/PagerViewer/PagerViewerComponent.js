@@ -111,28 +111,57 @@ export default class PagerViewer extends Component {
                 results={[
                     {
                         label: 'totalReturn',
-                        calc: ({ 
-                        loanAmount,
-                        selfAmount, 
-                        lawyerPrice, 
-                        appraiserPrice, 
-                        repairPrice, 
-                        monthlyIncome, 
-                        investmentPeriod, 
-                        sellingPrice,
-                        otherExpenses,
-                        purchaseTax }) => { 
-                            const purchaseTaxAmount = parseFloat(purchaseTax) * (loanAmount + selfAmount) / 100
+                        sign: '%',
+                        calc: ({ loanAmount, selfAmount, lawyerPrice, appraiserPrice, repairPrice, monthlyIncome, investmentPeriod, sellingPrice, otherExpenses, purchaseTax }) => { 
+                            if (!parseFloat(loanAmount) ||
+                                !parseFloat(selfAmount) ||
+                                !parseFloat(lawyerPrice) ||
+                                !parseFloat(appraiserPrice) ||
+                                !parseFloat(repairPrice) ||
+                                !parseFloat(monthlyIncome) ||
+                                !parseFloat(investmentPeriod) ||
+                                !parseFloat(sellingPrice) ||
+                                !parseFloat(otherExpenses) ||
+                                !parseFloat(purchaseTax)) {
+                                    return 0
+                                }
 
-                            const saleGain = sellingPrice - (selfAmount + loanAmount + lawyerPrice + appraiserPrice + repairPrice + otherExpenses + purchaseTaxAmount)
+                            let _loanAmount = parseFloat(loanAmount)
+                            let _selfAmount = parseFloat(selfAmount)
+                            let _lawyerPrice = parseFloat(lawyerPrice)
+                            let _appraiserPrice = parseFloat(appraiserPrice)
+                            let _repairPrice = parseFloat(repairPrice)
+                            let _monthlyIncome = parseFloat(monthlyIncome)
+                            let _investmentPeriod = parseFloat(investmentPeriod)
+                            let _sellingPrice = parseFloat(sellingPrice)
+                            let _otherExpenses = parseFloat(otherExpenses)
+                            let _purchaseTax = parseFloat(purchaseTax)
 
-                            const result = 100 * (saleGain + monthlyIncome + investmentPeriod) / (selfAmount + this.totalInterest + repairPrice + lawyerPrice + appraiserPrice + otherExpenses + purchaseTaxAmount)
+                            const profit = parseFloat(_sellingPrice) - 
+                                           (_loanAmount + _selfAmount) - 
+                                           _repairPrice - 
+                                           _lawyerPrice - 
+                                           _appraiserPrice - 
+                                           _otherExpenses
+                                                        
+                            const result = parseFloat((
+                                profit + (_monthlyIncome * _investmentPeriod)
+                            ) / (
+                                _loanAmount + 
+                                _selfAmount +
+                                _repairPrice +
+                                _lawyerPrice + 
+                                _appraiserPrice +
+                                _otherExpenses +
+                                _purchaseTax +
+                                this.totalInterest
+                            ))
 
                             if (!result || result < 0) {
                                 return 0
                             }
                             
-                            return result
+                            return result*100
                         }
                     }
                 ]} />
