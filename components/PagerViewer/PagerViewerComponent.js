@@ -112,9 +112,8 @@ export default class PagerViewer extends Component {
                     {
                         label: 'totalReturn',
                         sign: '%',
-                        calc: ({ loanAmount, selfAmount, lawyerPrice, appraiserPrice, repairPrice, monthlyIncome, investmentPeriod, sellingPrice, otherExpenses, purchaseTax }) => { 
-                            if (!parseFloat(loanAmount) ||
-                                !parseFloat(selfAmount) ||
+                        calc: ({ selfAmount, lawyerPrice, appraiserPrice, repairPrice, monthlyIncome, investmentPeriod, sellingPrice, otherExpenses, purchaseTax }) => { 
+                            if (!parseFloat(selfAmount) ||
                                 !parseFloat(lawyerPrice) ||
                                 !parseFloat(appraiserPrice) ||
                                 !parseFloat(repairPrice) ||
@@ -126,7 +125,6 @@ export default class PagerViewer extends Component {
                                     return 0
                                 }
 
-                            let _loanAmount = parseFloat(loanAmount)
                             let _selfAmount = parseFloat(selfAmount)
                             let _lawyerPrice = parseFloat(lawyerPrice)
                             let _appraiserPrice = parseFloat(appraiserPrice)
@@ -138,7 +136,7 @@ export default class PagerViewer extends Component {
                             let _purchaseTax = parseFloat(purchaseTax)
 
                             const profit = parseFloat(_sellingPrice) - 
-                                           (_loanAmount + _selfAmount) - 
+                                           _selfAmount - 
                                            _repairPrice - 
                                            _lawyerPrice - 
                                            _appraiserPrice - 
@@ -147,7 +145,6 @@ export default class PagerViewer extends Component {
                             const result = parseFloat((
                                 profit + (_monthlyIncome * _investmentPeriod)
                             ) / (
-                                _loanAmount + 
                                 _selfAmount +
                                 _repairPrice +
                                 _lawyerPrice + 
@@ -161,6 +158,7 @@ export default class PagerViewer extends Component {
                                 return 0
                             }
                             
+                            // Should be: 87.14
                             return result*100
                         }
                     }

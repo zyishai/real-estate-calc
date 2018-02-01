@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import {
     View,
     ScrollView,
-    Text
+    Text,
+    KeyboardAvoidingView
 } from 'react-native'
 
 import langFunc from '../../../lang'
@@ -28,11 +29,14 @@ export default class Page extends Component {
 
     render() {
         return (
+            <KeyboardAvoidingView
+                style={[styles.pageStyle]}
+                behavior="padding"
+                keyboardVerticalOffset={50}>
             <View style={[styles.pageStyle]}>
-                {/* <Text style={[styles.pageTitleStyle]}>
-                    { this.lang[this.props.pageTitle] }
-                </Text> */}
-                <ScrollView style={[styles.pageInputsStyle]}>
+                <ScrollView 
+                    style={[styles.pageInputsStyle]}
+                        keyboardShouldPersistTaps="always">
                     {
                         this.props.inputLabels.map((label, index) => (
                             <UserInput
@@ -53,6 +57,7 @@ export default class Page extends Component {
                     }
                 </View>
             </View>
+            </KeyboardAvoidingView>
         )
     }
 }

@@ -5,7 +5,8 @@ import {
 
 import langFunc from '../../../../lang'
 import styles from '../../styles'
-import FloatingLabel from './FloatingLabel'
+import UserInputAndroid from './UserInputAndroid'
+//import FloatingLabel from './FloatingLabel'
 
 export default class UserInput extends Component {
     constructor(props) {
@@ -46,22 +47,19 @@ export default class UserInput extends Component {
 
     render() {
         const defaultValue = this.props.defaultValue ? this.props.defaultValue.toString() : null
+        const direction = this.props.direction === 'rtl' ? true : false
 
         return (
-            <View
-                style={[styles.userInputStyle]}>
-                <FloatingLabel
-                    controlled={false}
-                    keyboardType='numeric'
-                    onChangeText={this._onChangeText.bind(this)}
-                    selectTextOnFocus={true}
-                    style={[styles.floatingLabelStyle, this.floatingLabelStyle]}
-                    inputStyle={[styles.floatingLabelInputStyle]}
-                    labelStyle={[styles.floatingLabelLabelStyle, this.labelStyle]}
-                    value={defaultValue}>
-                    {this.lang[this.props.label]}
-                </FloatingLabel>
-            </View>
+            <UserInputAndroid
+                controlled={false}
+                keyboardType='numeric'
+                onChangeText={this._onChangeText.bind(this)}
+                rtl={direction}
+                style={[styles.userInputStyle]}
+                inputStyle={[styles.floatingLabelInputStyle]}
+                //labelStyle={[styles.floatingLabelLabelStyle, this.labelStyle]}
+                defaultValue={defaultValue}
+                label={this.lang[this.props.label]} />
         )
     }
 }

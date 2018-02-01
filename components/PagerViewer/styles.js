@@ -4,7 +4,6 @@ import {
 
 export default StyleSheet.create({
     userInputStyle: {
-        marginBottom: 10
     },
     floatingLabelStyle: {
         
